@@ -10,11 +10,9 @@ export class ProductListComponent {
   productList: Product[] = [];
 
   constructor(private productService: ProductService) {
-    console.log('This is working2')
   }
 
   ngOnInit(): void {
-    console.log('this is working');
     this.productService.getProducts().subscribe((data) => {
       this.productList = data;
     });
