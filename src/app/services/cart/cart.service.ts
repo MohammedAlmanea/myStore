@@ -37,9 +37,8 @@ export class CartService {
     return this.cart;
   }
 
-  updateCart(prodcut: cartProduct): cartProduct {
-    let temp = this.cart.filter((item1) => item1.id === prodcut.id);
-    if (temp.length === 0) {
+  updateCart(prodcut: cartProduct): void{
+    if (prodcut.amount === 0) {
       this.cart.forEach((item2, index) => {
         if (prodcut.name === item2.name) {
           this.cart.splice(index, 1);
@@ -48,7 +47,6 @@ export class CartService {
     } else {
       this.item.amount = prodcut.amount;
     }
-    return this.item;
   }
 
   totalPrice () : number {
