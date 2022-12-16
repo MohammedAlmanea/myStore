@@ -37,15 +37,15 @@ export class CartService {
     return this.cart;
   }
 
-  updateCart(prodcut: cartProduct): void{
-    if (prodcut.amount === 0) {
+  updateCart(product: cartProduct): void{
+    if (product.amount === 0) {
       this.cart.forEach((item2, index) => {
-        if (prodcut.name === item2.name) {
+        if (product.name === item2.name) {
           this.cart.splice(index, 1);
         }
       });
     } else {
-      this.item.amount = prodcut.amount;
+      this.item.amount = product.amount;
     }
   }
 
