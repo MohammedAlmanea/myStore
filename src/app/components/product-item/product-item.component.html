@@ -1,6 +1,8 @@
 <div class="product-container">
-    <img src="{{product.url}}" alt="product's image" class="product-image">
-    <select name="amount">
+    <a routerLink="/product/{{product.id}}">
+        <img src="{{product.url}}" alt="product's image" class="product-image">
+    </a>
+    <select name="quantity" #amount >
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -12,5 +14,5 @@
         <option value="9">9</option>
         <option value="10">10</option>
     </select>
-    <input type="submit" value="Submit" class="select-input">
+    <input (click)="addToCart(product,amount.value)" type="submit" value="Submit" class="select-input">
 </div>
