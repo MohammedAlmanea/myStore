@@ -1,27 +1,37 @@
-# MyStore
+# MyStore Project Overview
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+MyStore is Angular application that allows users to view a list of available products to purchase, add them to a shopping cart, and ultimately complete the checkout process. 
 
-## Development server
+![MyStore shopping flow](shoppingflow.gif)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+An e-commerce website – an application that allows users to view a list of available products to purchase, add them to a shopping cart, and ultimately complete the checkout process. 
 
-## Code scaffolding
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting started
 
-## Build
+1. install the packages by running:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install
+```
 
-## Running unit tests
+2. Serve the project:  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+ng s
+```
+3. Go to `http://localhost:4200/`
 
-## Running end-to-end tests
+#### Project features
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The application reflects the same user experience as that of a real-world e-commerce website, including a(n):
 
-## Further help
+* **Product list** page, which displays the available products for the user to choose and add to their cart (in various quantities)
+* **Product details** page, which displays more information about any particular product
+* **Shopping cart**, which includes the products that the user has added to their cart
+* **Checkout form**, which collects information about the user (e.g., name, address, payment details, etc.)
+* **Order confirmation page**, which shows the outcome after the user completes the checkout process (i.e., submits the checkout form)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Note
+`data.json` Used to fetch the products for the store as a mock to an API.
