@@ -1,1 +1,75 @@
-<p>cart works!</p>
+<div class="cart-container">
+    <div class="cart-panel" *ngIf="cart.length !== 0">
+        <div class="cart-item" *ngFor="let item of cart">
+            <img src="{{item.url}}" alt="{{item.name}}">
+            <div class="cart-item-details ">
+                <h2>{{item.name}}</h2>
+                <p>${{item.price}}</p>
+            <label for="quantity">Amount: </label>
+                <input 
+                    type="number" 
+                    min="0" 
+                    max="10" 
+                    value="{{item.amount}}" 
+                    id="quantity" 
+                    class="number-input" 
+                    [(ngModel)]="item.amount" 
+                    (change)="totalPrice();updateCart(item)"
+                >
+            </div>
+            
+        </div>
+
+        <h2>Total: ${{ order.total }}</h2>
+    </div>
+
+
+    <form #form="ngForm" class="form-margin" *ngIf="cart.length !== 0" (ngSubmit)="makeOrder()">
+        <label for="name">Full name</label>
+        <input 
+            type="text" 
+            required 
+            minlength="3" 
+            [(ngModel)]="order.name"  
+            name="full-name" id="fullname" 
+            placeholder="(Minimum 3 characters)"
+        >
+
+        <label for="address">Address</label>
+        <input 
+            type="text"
+            required 
+            minlength="6"
+            [(ngModel)]="order.address"
+            name="address"  
+            id="address" 
+            placeholder="(Minimum 6 characters)"
+        >
+
+        <label for="card">Credit card number</label>
+        <input 
+            type="text" 
+            minlength="16" 
+            maxlength="16"
+            pattern="[0-9]*"
+            name="creditcard"  
+            id="creditcard" 
+            placeholder="(Enter 16 digits)" 
+            [(ngModel)]="credit"
+            inputmode="numeric"
+            required
+            #creditInput="ngModel"
+        >
+
+        <button 
+            type="submit" 
+            [disabled]="form.form.invalid" 
+            >
+            Submit
+        </button>
+    </form>
+<div class="empty-cart-message" *ngIf="cart.length === 0">
+    <h3>Cart is empty</h3>
+</div>
+
+</div>
