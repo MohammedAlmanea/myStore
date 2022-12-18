@@ -14,7 +14,7 @@
                     id="quantity" 
                     class="number-input" 
                     [(ngModel)]="item.amount" 
-                    (change)="totalPrice();updateCart(item)"
+                    (ngModelChange)="totalPrice();updateCart(item)"
                 >
             </div>
             
